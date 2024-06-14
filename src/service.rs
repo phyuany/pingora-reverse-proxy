@@ -90,6 +90,8 @@ pub fn proxy_service_tls(
     let tls_settings = TlsSettings::with_callbacks(cb).unwrap();
     service.add_tls_with_settings(listen_addr, None, tls_settings);
 
+    println!("TLS service created");
+
     service
 }
 

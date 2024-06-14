@@ -33,7 +33,7 @@ impl ProxyHttp for ProxyApp {
 
     async fn upstream_peer(&self, session: &mut Session, _ctx: &mut ()) -> Result<Box<HttpPeer>> {
         let host_header = session.get_header(header::HOST).unwrap().to_str().unwrap();
-        debug!("host header: {host_header}");
+        println!("The host header is: {host_header}");
 
         let host_config = self
             .host_configs
